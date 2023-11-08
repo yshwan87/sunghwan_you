@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <style>
+        .styled-table {
+            width: 100%;
+            border-collapse: collapse;
+            position: relative;
+        }
+
+        .styled-table th,
+        .styled-table td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd; /
+        }
+
+        .styled-table th {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        .icon-link {
+        margin-bottom: 20px;
+        }
+    </style>
+
+    <div style="text-align: center; color: rgb(0, 140, 255); margin: 20px;">
+        <h1 style="margin-bottom: 50px; font-weight: 300;">Contact Management</h1>
+    </div>
+    <br/>
+    <a href="{% url 'contact_create' %}" class="btn btn-primary icon-link">Create a New Contact</a>
+    <br/>
+    <table class="center-table styled-table">
+        <thead>
+            <tr>
+                <th>Contact Name</th>
+                <th>Email</th>
+                <th>Created Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for contact in contacts %}
+                <tr>
+                    <td>{{ contact.name }}</td>
+                    <td>{{ contact.email }}</td>
+                    <td>{{ contact.created_time }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock content %}
