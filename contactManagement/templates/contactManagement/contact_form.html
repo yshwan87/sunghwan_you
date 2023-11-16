@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div style="text-align: center; color: rgb(0, 140, 255); margin: 20px;">
+    <h1 style="margin-bottom: 50px; font-weight: 300;">Create Contact</h1>
+</div>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button class="btn btn-primary" type="submit">Save</button>
+  <a href="{% url 'contact_list' %}"><button type="button" class="btn btn-secondary">Cancel</button></a>
+</form>
+
+{% endblock content %}
