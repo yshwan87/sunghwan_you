@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style="text-align: center; color: rgb(0, 140, 255); margin: 20px;">
+    <h1 style="margin-bottom: 50px; font-weight: 300;">Delete</h1>
+</div>
+<p>Are you sure you want to delete contact "{{ contact.name }}"?</p>
+<form method="post">
+  {% csrf_token %}
+  <button class="btn btn-danger" type="submit">Delete</button>
+  <a class="btn btn-info" href="{% url 'contact_list' %}" role="button">Cancel</a>
+</form>
+
+{% endblock content %}

@@ -11,7 +11,7 @@
 <p>created_time: {{ contact.created_time }}</p>
 <br>
 <a class="btn btn-info" href="{% url 'contact_list' %}" role="button">Home</a>
-<a class="btn btn-secondary" href="{% url 'contact_update' contact.pk %}" role="button">Edit</a>
-<a class="btn btn-warning" href="{% url 'contact_delete' contact.pk %}" role="button">Delete</a>
+<a class="btn btn-secondary" href="{% url 'contact_update' contact.id %}" role="button">Edit</a>
+<a class="btn btn-warning" href="{% url 'contact_confirm_delete' contact.id %}" role="button">Delete</a>
 
 {% endblock content %}
