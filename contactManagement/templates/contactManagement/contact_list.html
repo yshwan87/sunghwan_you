@@ -43,7 +43,12 @@
         <tbody>
             {% for contact in contact_list %}
                 <tr>
-                    <td>{{ contact.name }}</td>
+                    <td> 
+                        <a class="icon-link" href="{% url 'contact_detail' contact.id %}">
+                            <i class="bi bi-pencil"></i> </a>
+                          &nbsp;                               
+                        {{ contact.name }}
+                    </td>
                     <td>{{ contact.email }}</td>
                     <td>{{ contact.created_time }}</td>
                 </tr>

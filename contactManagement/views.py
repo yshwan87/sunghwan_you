@@ -18,3 +18,6 @@ class ContactCreateView(CreateView):
     model = Contact
     form_class = ContactForm
     success_url = reverse_lazy("contact_list")
+
+class ContactDetailView(DetailView):
+    model = Contact
