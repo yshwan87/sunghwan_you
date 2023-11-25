@@ -21,3 +21,13 @@ class ContactCreateView(CreateView):
 
 class ContactDetailView(DetailView):
     model = Contact
+
+class ContactUpdateView(UpdateView):
+    model = Contact
+    form_class = ContactForm
+    success_url = reverse_lazy("contact_list")
+
+
+class ContactDeleteView(DeleteView):
+    model = Contact
+    success_url = reverse_lazy("contact_list")
